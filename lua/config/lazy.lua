@@ -22,10 +22,22 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
+-- make line numbers default
+vim.wo.number = true
+vim.wo.signcolumn = 'yes'
+vim.wo.relativenumber = true
+
+-- cursorline
+vim.opt.cursorline = true
+
+-- save undo history
+vim.o.undofile = true
+
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
     -- import your plugins
     { import = "config.plugins" },
   },
+  { "nvim-tree/nvim-web-devicons", opts = {} },
 })
