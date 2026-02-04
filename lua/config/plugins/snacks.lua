@@ -35,10 +35,31 @@ return{
     scroll = { enabled = true },
     statuscolumn = { enabled = true },
     words = { enabled = true },
-  },
-  keys = {
+    --lazygit = { enabled = true, 
+    	--{
+        --	"kdheepak/lazygit.nvim",
+        --	cmd = {
+        --    		"LazyGit",
+        --    		"LazyGitConfig",
+        --    		"LazyGitCurrentFile",
+        --    		"LazyGitFilter",
+        --    		"LazyGitFilterCurrentFile",
+        --	},
+        --	-- optional for floating window border decoration
+        --	dependencies = {
+        --    		"nvim-lua/plenary.nvim",
+        --	}, 
+    	--},
+    },
+  	
+    keys = {
 	  { "<leader>s", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
 	  { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
-   
-  }
+
+	  { "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
+	  { "<leader>gg", function() Snacks.lazygit.open() end, desc = "LazyGit" },
+    	},
 }
+
+
+
