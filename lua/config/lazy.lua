@@ -42,6 +42,9 @@ require("lazy").setup({
   { "nvim-tree/nvim-web-devicons", opts = {} }, 
 })
 
+vim.opt.termguicolors = true
+require("bufferline").setup{}
+
 require('lualine').setup {
   options = {
     icons_enabled = true,
