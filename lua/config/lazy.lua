@@ -33,6 +33,9 @@ vim.opt.cursorline = true
 -- save undo history
 vim.o.undofile = true
 
+-- save to systemclipboard
+vim.opt.clipboard = "unnamedplus"
+
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
