@@ -22,6 +22,21 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
+
+-- Setup lazy.nvim
+require("lazy").setup({
+  spec = {
+    -- import your plugins
+    { import = "config.plugins" },
+    { import = "config.plugins.lsp" },
+  },
+  { "nvim-tree/nvim-web-devicons", opts = {} }, 
+})
+
+--LazyNvim imports error disable
+vim.g.lazyvim_check_order = false
+
+
 -- make line numbers default
 vim.wo.number = true
 vim.wo.signcolumn = 'yes'
@@ -35,15 +50,6 @@ vim.o.undofile = true
 
 -- save to systemclipboard
 vim.opt.clipboard = "unnamedplus"
-
--- Setup lazy.nvim
-require("lazy").setup({
-  spec = {
-    -- import your plugins
-    { import = "config.plugins" },
-  },
-  { "nvim-tree/nvim-web-devicons", opts = {} }, 
-})
 
 vim.opt.termguicolors = true
 require("bufferline").setup{}

@@ -18,6 +18,7 @@ return{
 		    { section = "startup" },
 	    }
     },
+
     explorer = { 
 	    enabled = true,
 	    replace_netrw = true,
@@ -29,7 +30,7 @@ return{
 	    enabled = true,
 	    sources = { explorer = { hidden = true, }}
     },
-    notifier = { enabled = true },
+    notifier = { enabled = true, timeout = 6000 },
     quickfile = { enabled = true },
     scope = { enabled = true },
     scroll = { enabled = true },
@@ -50,14 +51,14 @@ return{
         --    		"nvim-lua/plenary.nvim",
         --	}, 
     	--},
-    },
-  	
+    },  	
     keys = {
 	  { "<leader>s", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
 	  { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
 
 	  { "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
 	  { "<leader>gg", function() Snacks.lazygit.open() end, desc = "LazyGit" },
+	  { "<leader>q", function() Snacks.dashboard.open() end, desc = "Dashboard öffnen" },
     	},
 }
 
